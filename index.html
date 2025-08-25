@@ -1,74 +1,231 @@
-<!doctype html>
+
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOVIE LINKS</title>
-  <meta name="description" content="Premium sleek UI for my baby to access movie links with love.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1a0a14;
-      --card: #2a0d1f;
-      --muted: #f5c6e0;
-      --text: #fff0f8;
-      --accent: #ff5fa2;
-      --accent-grad: linear-gradient(135deg, #ff5fa2 0%, #ff99ac 100%);
-      --radius: 18px;
-      --shadow: 0 12px 32px rgba(0,0,0,0.4);
-    }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(circle at 20% -10%, rgba(255,153,172,.2), transparent),
-                  radial-gradient(circle at 100% 10%, rgba(255,95,162,.25), transparent),
-                  var(--bg);
-      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .wrap { max-width: 700px; margin: 40px auto; padding: 0 20px; }
-    h1 { font-size: 28px; margin: 0 0 10px; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .sub { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
-    .card { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
-    .list { display: grid; gap: 15px; }
-    .row { display:flex; justify-content: space-between; align-items:center; background: rgba(255,255,255,.05); padding: 14px 18px; border-radius: 14px; transition: transform .15s ease; }
-    .row:hover { transform: translateY(-2px); }
-    .site { display:flex; flex-direction: column; }
-    .name { font-weight: 600; font-size: 16px; }
-    .url { font-size: 13px; color: var(--muted); }
-    .tick { font-size: 18px; color: #7CFC00; }
-    a { text-decoration: none; color: var(--text); }
-    a:hover { text-decoration: underline; }
-    footer { text-align:center; margin-top: 40px; color: var(--muted); font-size: 13px; }
+    header {
+      padding: 30px 20px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #fcb69f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: rgba(255,255,255,0.85);
+    }
+    section {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+    }
+    section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.1);
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: transform 0.2s, background 0.3s;
+    }
+    .link:hover {
+      transform: scale(1.03);
+      background: rgba(255,255,255,0.25);
+    }
+    .link a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .tick {
+      color: #00ff88;
+      font-size: 1.2rem;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <header>
     <h1>MOVIE LINKS</h1>
-    <div class="sub">for my baby you can access all the links and it will be regularly updated by me for my gorgeous 💖</div>
+    <h2>for my baby you can access all the links and it will be regularly updated by me for my gorgeous 💖</h2>
+  </header>
 
-    <div class="card">
-      <div class="list">
-        <div class="row">
-          <div class="site">
-            <a href="https://www.cineby.app/" target="_blank"><span class="name">Cineby</span></a>
-            <span class="url">https://www.cineby.app/</span>
-          </div>
-          <span class="tick">✔️</span>
-        </div>
-        <div class="row">
-          <div class="site">
-            <a href="https://rivestream.net/" target="_blank"><span class="name">RiveStream</span></a>
-            <span class="url">https://rivestream.net/</span>
-          </div>
-          <span class="tick">✔️</span>
-        </div>
-      </div>
-    </div>
+  <!-- Movies Section -->
+  <section>
+    <h3>🎬 Movies</h3>
+    <div class="link"><a href="https://www.cineby.app/" target="_blank">Cineby</a> <span class="tick">✔️</span></div>
+    <div class="link"><a href="https://rivestream.net/" target="_blank">Rivestream</a> <span class="tick">✔️</span></div>
+    <div class="link"><a href="https://smashystream.xyz/" target="_blank">SmashyStream</a> <span class="tick">✔️</span></div>
+  </section>
 
-    <footer>Made with 💕 just for you</footer>
-  </div>
+  <!-- Books Section -->
+  <section>
+    <h3>📚 Books</h3>
+    <div class="link"><a href="https://z-lib.gd/" target="_blank">Z-Library</a> <span class="tick">✔️</span></div>
+    <div class="link"><a href="https://en.booksee.org/" target="_blank">BookSee</a> <span class="tick">✔️</span></div>
+  </section>
+
+  <!-- Bypass Section -->
+  <section>
+    <h3>🚪 Bypass</h3>
+    <div class="link"><a href="https://paywallbuster.com/" target="_blank">Paywall Buster</a> <span class="tick">✔️</span></div>
+  </section>
+
+  <!-- Game Section -->
+  <section>
+    <h3>💖 Catch the Hearts Game</h3>
+    <p>Use ⬅️ and ➡️ keys, your mouse, or touch to move the basket and catch falling hearts!</p>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </section>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let basket = { x: 160, y: 360, width: 80, height: 20, speed: 6 };
+    let hearts = [];
+    let score = 0;
+
+    function drawBasket() {
+      ctx.fillStyle = "#ff69b4";
+      ctx.beginPath();
+      ctx.rect(basket.x, basket.y, basket.width, basket.height);
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function drawHeart(x, y) {
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.bezierCurveTo(x - 5, y - 15, x - 25, y + 10, x, y + 25);
+      ctx.bezierCurveTo(x + 25, y + 10, x + 5, y - 15, x, y);
+      ctx.fill();
+    }
+
+    function drawScore() {
+      ctx.fillStyle = "#fff";
+      ctx.font = "16px Arial";
+      ctx.fillText("Score: " + score, 10, 20);
+    }
+
+    function updateHearts() {
+      if (Math.random() < 0.03) {
+        hearts.push({ x: Math.random() * (canvas.width - 20) + 10, y: -20 });
+      }
+      for (let i = 0; i < hearts.length; i++) {
+        hearts[i].y += 2;
+        if (
+          hearts[i].x > basket.x &&
+          hearts[i].x < basket.x + basket.width &&
+          hearts[i].y > basket.y &&
+          hearts[i].y < basket.y + basket.height
+        ) {
+          score++;
+          hearts.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function drawHearts() {
+      for (let heart of hearts) {
+        drawHeart(heart.x, heart.y);
+      }
+    }
+
+    function gameLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBasket();
+      updateHearts();
+      drawHearts();
+      drawScore();
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Keyboard controls
+    let keys = {};
+    document.addEventListener("keydown", e => keys[e.key] = true);
+    document.addEventListener("keyup", e => keys[e.key] = false);
+
+    function moveBasket() {
+      if (keys["ArrowLeft"] && basket.x > 0) basket.x -= basket.speed;
+      if (keys["ArrowRight"] && basket.x < canvas.width - basket.width) basket.x += basket.speed;
+    }
+
+    function update() {
+      moveBasket();
+      requestAnimationFrame(update);
+    }
+
+    // Mouse controls
+    canvas.addEventListener("mousemove", function(e) {
+      const rect = canvas.getBoundingClientRect();
+      let mouseX = e.clientX - rect.left;
+      basket.x = mouseX - basket.width / 2;
+      if (basket.x < 0) basket.x = 0;
+      if (basket.x > canvas.width - basket.width) basket.x = canvas.width - basket.width;
+    });
+
+    // Touch controls (for mobile)
+    canvas.addEventListener("touchmove", function(e) {
+      const rect = canvas.getBoundingClientRect();
+      let touchX = e.touches[0].clientX - rect.left;
+      basket.x = touchX - basket.width / 2;
+      if (basket.x < 0) basket.x = 0;
+      if (basket.x > canvas.width - basket.width) basket.x = canvas.width - basket.width;
+    });
+
+    gameLoop();
+    update();
+  </script>
 </body>
-</html>
+</html>"""
+
+# Save file
+file_path = "/mnt/data/index.html"
+with open(file_path, "w") as f:
+    f.write(html_content)
+
+file_path
+  
