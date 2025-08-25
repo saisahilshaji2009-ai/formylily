@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOVIE LINKS</title>
+  <meta name="description" content="Premium sleek UI for my baby to access movie links with love.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a0a14;
+      --card: #2a0d1f;
+      --muted: #f5c6e0;
+      --text: #fff0f8;
+      --accent: #ff5fa2;
+      --accent-grad: linear-gradient(135deg, #ff5fa2 0%, #ff99ac 100%);
+      --radius: 18px;
+      --shadow: 0 12px 32px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at 20% -10%, rgba(255,153,172,.2), transparent),
+                  radial-gradient(circle at 100% 10%, rgba(255,95,162,.25), transparent),
+                  var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 28px; margin: 0 0 10px; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .sub { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+    .list { display: grid; gap: 15px; }
+    .row { display:flex; justify-content: space-between; align-items:center; background: rgba(255,255,255,.05); padding: 14px 18px; border-radius: 14px; transition: transform .15s ease; }
+    .row:hover { transform: translateY(-2px); }
+    .site { display:flex; flex-direction: column; }
+    .name { font-weight: 600; font-size: 16px; }
+    .url { font-size: 13px; color: var(--muted); }
+    .tick { font-size: 18px; color: #7CFC00; }
+    a { text-decoration: none; color: var(--text); }
+    a:hover { text-decoration: underline; }
+    footer { text-align:center; margin-top: 40px; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>MOVIE LINKS</h1>
+    <div class="sub">for my baby you can access all the links and it will be regularly updated by me for my gorgeous 💖</div>
+
+    <div class="card">
+      <div class="list">
+        <div class="row">
+          <div class="site">
+            <a href="https://www.cineby.app/" target="_blank"><span class="name">Cineby</span></a>
+            <span class="url">https://www.cineby.app/</span>
+          </div>
+          <span class="tick">✔️</span>
+        </div>
+        <div class="row">
+          <div class="site">
+            <a href="https://rivestream.net/" target="_blank"><span class="name">RiveStream</span></a>
+            <span class="url">https://rivestream.net/</span>
+          </div>
+          <span class="tick">✔️</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>Made with 💕 just for you</footer>
+  </div>
+</body>
+</html>
