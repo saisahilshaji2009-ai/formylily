@@ -81,7 +81,7 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       backdrop-filter: blur(8px);
     }
-    #toggleMusic {
+    #toggleMusic, #complimentBtn {
       margin-top:10px;
       padding:8px 16px;
       border:none;
@@ -92,7 +92,7 @@
       cursor:pointer;
       transition: transform 0.2s;
     }
-    #toggleMusic:hover {
+    #toggleMusic:hover, #complimentBtn:hover {
       transform: scale(1.05);
     }
   </style>
@@ -109,6 +109,8 @@
     <div class="link"><a href="https://www.cineby.app/" target="_blank">Cineby</a> <span class="tick">✔️</span></div>
     <div class="link"><a href="https://rivestream.net/" target="_blank">Rivestream</a> <span class="tick">✔️</span></div>
     <div class="link"><a href="https://smashystream.xyz/" target="_blank">SmashyStream</a> <span class="tick">✔️</span></div>
+    <div class="link"><a href="https://watch.spencerdevs.xyz/" target="_blank">SpencerDevs</a> <span class="tick">✔️</span></div>
+    <div class="link"><a href="https://cinemaos.live/" target="_blank">CinemaOS</a> <span class="tick">✔️</span></div>
   </section>
 
   <!-- Books Section -->
@@ -136,11 +138,18 @@
     <h3>🎵 Our Song</h3>
     <p>Here’s our favorite track, just for you 💕</p>
     <audio id="bgMusic" autoplay loop>
-      <source src="https://raw.githubusercontent.com/saisahilshaji2009-ai/formylily/main/ssvid.net--See-You-Again-Tyler-the-Creator-ft-Kali-Uchis-Edit.mp3?raw=true" type="audio/mpeg">
+      <source src="ssvid.net--See-You-Again-Tyler-the-Creator-ft-Kali-Uchis-Edit.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <br>
     <button id="toggleMusic">⏸ Pause Music</button>
+  </section>
+
+  <!-- Compliment Section -->
+  <section>
+    <h3>💌 Daily Compliment</h3>
+    <p id="complimentText">Click below to get today’s compliment! 💕</p>
+    <button id="complimentBtn">Get Compliment</button>
   </section>
 
   <script>
@@ -256,194 +265,48 @@
         toggleBtn.textContent = "▶️ Play Music";
       }
     });
+
+    // Compliment Script
+    const compliments = [
+      "Hieee cutie I see you clicked this you look really pretty with those dreamy eyes of yours looking at the screen HIEEE umaaaaa all over you ahem come back every day for complimentss cutie cause you deserve them",
+      "you are so godamn fine you know that? I would do absolutely anything for you my queen I love you so much you now keep smiling cause you make this boy giggle and blushy also your smile turns me on like HELL.",
+      "I love you madam ji I'm here for you always you have sai.",
+      "You are really cute can we fuck I meant can we cuddle and if it slips in let it #freakycore",
+      "You are so pretty my baby",
+      "What my nigga huh whhat huh looking all fine where you going? HUH LOOKING ALL FINE AT HOME TOO SMILE FOR ME MY NIGGA YEAH GOOD GIRL 😩",
+      "You are the best thing that has ever happened to me",
+      "fk dante invest in sahil (but fk me harder.)👍",
+      "Hey sexy wanna go out for dinner you can lie down on the table and let me finish in your hm?",
+      "You are so pretty i love your eyes your hair everything about you turns me on makes me happy I love you soo much"
+    ];
+
+    const complimentBtn = document.getElementById("complimentBtn");
+    const complimentText = document.getElementById("complimentText");
+
+    function getTodayKey() {
+      const today = new Date();
+      return today.toDateString();
+    }
+
+    function showCompliment() {
+      const todayKey = getTodayKey();
+      const saved = localStorage.getItem("complimentDate");
+
+      if (saved === todayKey) {
+        complimentText.textContent = localStorage.getItem("complimentText");
+      } else {
+        const random = compliments[Math.floor(Math.random() * compliments.length)];
+        complimentText.textContent = random;
+        localStorage.setItem("complimentDate", todayKey);
+        localStorage.setItem("complimentText", random);
+      }
+    }
+
+    complimentBtn.addEventListener("click", showCompliment);
+
+    if (localStorage.getItem("complimentDate") === getTodayKey()) {
+      complimentText.textContent = localStorage.getItem("complimentText");
+    }
   </script>
 </body>
 </html>
-width: 90%;
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      backdrop-filter: blur(12px);
-    }
-    section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #f7971e, #ffd200);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.1);
-      margin: 10px 0;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-size: 1rem;
-      transition: transform 0.2s, background 0.3s;
-    }
-    .link:hover {
-      transform: scale(1.03);
-      background: rgba(255,255,255,0.25);
-    }
-    .link a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .tick {
-      color: #00ff88;
-      font-size: 1.2rem;
-    }
-    canvas {
-      display: block;
-      margin: 20px auto;
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      backdrop-filter: blur(8px);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>MOVIE LINKS</h1>
-    <h2>for my baby you can access all the links and it will be regularly updated by me for my gorgeous 💖</h2>
-  </header>
-
-  <!-- Movies Section -->
-  <section>
-    <h3>🎬 Movies</h3>
-    <div class="link"><a href="https://www.cineby.app/" target="_blank">Cineby</a> <span class="tick">✔️</span></div>
-    <div class="link"><a href="https://rivestream.net/" target="_blank">Rivestream</a> <span class="tick">✔️</span></div>
-    <div class="link"><a href="https://smashystream.xyz/" target="_blank">SmashyStream</a> <span class="tick">✔️</span></div>
-  </section>
-
-  <!-- Books Section -->
-  <section>
-    <h3>📚 Books</h3>
-    <div class="link"><a href="https://z-lib.gd/" target="_blank">Z-Library</a> <span class="tick">✔️</span></div>
-    <div class="link"><a href="https://en.booksee.org/" target="_blank">BookSee</a> <span class="tick">✔️</span></div>
-  </section>
-
-  <!-- Bypass Section -->
-  <section>
-    <h3>🚪 Bypass</h3>
-    <div class="link"><a href="https://paywallbuster.com/" target="_blank">Paywall Buster</a> <span class="tick">✔️</span></div>
-  </section>
-
-  <!-- Game Section -->
-  <section>
-    <h3>💖 Catch the Hearts Game</h3>
-    <p>Use ⬅️ and ➡️ keys, your mouse, or touch to move the basket and catch falling hearts!</p>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-  </section>
-
-  <script>
-    const canvas = document.getElementById("gameCanvas");
-    const ctx = canvas.getContext("2d");
-
-    let basket = { x: 160, y: 360, width: 80, height: 20, speed: 6 };
-    let hearts = [];
-    let score = 0;
-
-    function drawBasket() {
-      ctx.fillStyle = "#ff69b4";
-      ctx.beginPath();
-      ctx.rect(basket.x, basket.y, basket.width, basket.height);
-      ctx.fill();
-      ctx.closePath();
-    }
-
-    function drawHeart(x, y) {
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.bezierCurveTo(x - 5, y - 15, x - 25, y + 10, x, y + 25);
-      ctx.bezierCurveTo(x + 25, y + 10, x + 5, y - 15, x, y);
-      ctx.fill();
-    }
-
-    function drawScore() {
-      ctx.fillStyle = "#fff";
-      ctx.font = "16px Arial";
-      ctx.fillText("Score: " + score, 10, 20);
-    }
-
-    function updateHearts() {
-      if (Math.random() < 0.03) {
-        hearts.push({ x: Math.random() * (canvas.width - 20) + 10, y: -20 });
-      }
-      for (let i = 0; i < hearts.length; i++) {
-        hearts[i].y += 2;
-        if (
-          hearts[i].x > basket.x &&
-          hearts[i].x < basket.x + basket.width &&
-          hearts[i].y > basket.y &&
-          hearts[i].y < basket.y + basket.height
-        ) {
-          score++;
-          hearts.splice(i, 1);
-          i--;
-        }
-      }
-    }
-
-    function drawHearts() {
-      for (let heart of hearts) {
-        drawHeart(heart.x, heart.y);
-      }
-    }
-
-    function gameLoop() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawBasket();
-      updateHearts();
-      drawHearts();
-      drawScore();
-      requestAnimationFrame(gameLoop);
-    }
-
-    // Keyboard controls
-    let keys = {};
-    document.addEventListener("keydown", e => keys[e.key] = true);
-    document.addEventListener("keyup", e => keys[e.key] = false);
-
-    function moveBasket() {
-      if (keys["ArrowLeft"] && basket.x > 0) basket.x -= basket.speed;
-      if (keys["ArrowRight"] && basket.x < canvas.width - basket.width) basket.x += basket.speed;
-    }
-
-    function update() {
-      moveBasket();
-      requestAnimationFrame(update);
-    }
-
-    // Mouse controls
-    canvas.addEventListener("mousemove", function(e) {
-      const rect = canvas.getBoundingClientRect();
-      let mouseX = e.clientX - rect.left;
-      basket.x = mouseX - basket.width / 2;
-      if (basket.x < 0) basket.x = 0;
-      if (basket.x > canvas.width - basket.width) basket.x = canvas.width - basket.width;
-    });
-
-    // Touch controls (for mobile)
-    canvas.addEventListener("touchmove", function(e) {
-      const rect = canvas.getBoundingClientRect();
-      let touchX = e.touches[0].clientX - rect.left;
-      basket.x = touchX - basket.width / 2;
-      if (basket.x < 0) basket.x = 0;
-      if (basket.x > canvas.width - basket.width) basket.x = canvas.width - basket.width;
-    });
-
-    gameLoop();
-    update();
-  </script>
-</body>
-</html>
-
-  
